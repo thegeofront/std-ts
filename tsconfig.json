@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "sourceMap": false,
+      "declaration": true,
+      "target": "esNext",
+      "outDir": "../../../app/public/modules"
+    },
+    "include": [
+      "src/**/*"
+    ]
+}
