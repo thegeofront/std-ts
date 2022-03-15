@@ -3,7 +3,7 @@
       "sourceMap": false,
       "declaration": true,
       "target": "esNext",
-      "outDir": "../../../app/public/modules"
+      "outDir": "../app/public/modules"
     },
     "include": [
       "src/**/*"
