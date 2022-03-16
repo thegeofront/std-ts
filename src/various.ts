@@ -28,6 +28,9 @@ export function stringify(json: any): string {
     return JSON.stringify(json);
 }
 
+
+
+
 export function numberFromBinary(a: boolean,b: boolean,c: boolean,d: boolean,e: boolean,f: boolean,g: boolean,h: boolean) {
     let n = 0;
     let bools = [a,b,c,d,e,f,g,h];
