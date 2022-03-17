@@ -28,7 +28,9 @@ export function stringify(json: any): string {
     return JSON.stringify(json);
 }
 
-
+export function log(data: any) {
+    console.log(data);
+}
 
 
 export function numberFromBinary(a: boolean,b: boolean,c: boolean,d: boolean,e: boolean,f: boolean,g: boolean,h: boolean) {
