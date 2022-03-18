@@ -11,7 +11,7 @@ export class MultiVector3 {
     buffer: Float32Array;
 }
 
-export class Vector {
+export class MyVector {
     x: number;
     y: number;
     z: number;
@@ -71,6 +71,18 @@ export function xyzToMultiVector3(xyz: XYZ) : MultiVector3 {
     return {trait: "multi-vector-3", buffer: newBuffer};
 }
 
+
+export function MultiVector3ToXYX(mv: MultiVector3) : XYZ {
+    
+    return {
+        trait: "table",
+        header: ['x', 'y', 'z'],
+        width: 3,
+        height: mv.buffer.length / 3,
+        buffer: mv.buffer,
+    }
+}
+
 export function writeXYZ(xyz: XYZ) : string {
 
     let lines: string[] = [];
@@ -92,7 +104,7 @@ export function writeXYZ(xyz: XYZ) : string {
 
 export function iterate(multiVector: MultiVector3) {
     const { buffer } = multiVector;
-    let list: Vector[] = [];
+    let list: MyVector[] = [];
     let height = buffer.length / 3;
     for (let i = 0 ; i < height ; i++) {
         list.push({
@@ -107,7 +119,8 @@ export function iterate(multiVector: MultiVector3) {
 /**
  * Add two Vectors
  */
-export function add(a: Vector, b: Vector) {
+export function add(a: MyVector, b: MyVector) {
+    console.log(a, b);
     return {
         x: a.x + b.x, 
         y: a.y + b.y, 
@@ -118,11 +131,11 @@ export function add(a: Vector, b: Vector) {
 /**
  * How to deal with generics / traits ? 
  */
-export function move(geometry: any, mover: Vector) {
+export function move(geometry: any, mover: MyVector) {
     // return geometry + mover
 }
 
-export function aggregate(vectorList: Vector[]) : MultiVector3 {
+export function aggregate(vectorList: MyVector[]) : MultiVector3 {
     let buffer = new Float32Array(vectorList.length * 3);
     for (let [i, vector] of vectorList.entries()) {
         buffer[i*3 + 0] = vector.x;
