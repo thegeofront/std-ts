@@ -36,7 +36,7 @@ export function stringify(json: any): string {
     return JSON.stringify(json);
 }
 
-export function asList(any: any): Array<any> {
+export function asList(any: any): any[] {
     return any as Array<any>;
 }
 
