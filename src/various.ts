@@ -8,24 +8,36 @@ export async function fetchText(path: string) {
     return await data.text();
 }
 
-export function toNumber(n: any) : number {
+export function asNumber(n: any) : number {
     return Number(n);
 }
 
-export function toBoolean(n: any) : boolean {
+export function asBoolean(n: any) : boolean {
     return Boolean(n);
 }
 
-export function toString(n: any): string {
+export function asString(n: any): string {
     return String(n);
 }
 
-export function toJson(text: string): any {
+export function toJson(text: string): Object {
     return JSON.parse(text)
+}
+
+export function decode(text: string): Object {
+    return JSON.parse(text)
+}
+
+export function encode(json: any): string {
+    return JSON.stringify(json);
 }
 
 export function stringify(json: any): string {
     return JSON.stringify(json);
+}
+
+export function asList(any: any): Array<any> {
+    return any as Array<any>;
 }
 
 export function log(data: any) {
