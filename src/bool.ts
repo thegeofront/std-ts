@@ -9,3 +9,15 @@ export function or(a: boolean, b: boolean) {
 export function not(a: boolean) {
     return !a;
 }
+
+export function equals(a: any, b: any) : boolean {
+    return a === b;
+}
+
+export function larger(a: any, b: any) : boolean {
+    return a > b;
+} 
+
+export function smaller(a: any, b: any) : boolean {
+    return a < b;
+} 
